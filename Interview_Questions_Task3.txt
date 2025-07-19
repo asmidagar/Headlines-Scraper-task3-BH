@@ -1,0 +1,36 @@
+1. What is a GET request?
+A GET request is one of the most commonly used HTTP methods. It is used by clients (like web browsers or Python scripts using requests.get()) to retrieve data from a specified server or endpoint. When you type a URL in your browser and hit Enter, you're sending a GET request to that URL. The server then processes the request and responds with the requested resource, such as an HTML page or JSON data. GET requests are considered safe and idempotent, meaning they should not cause changes on the server. They also include parameters in the URL itself, not in the body.
+
+2. How do you install external packages in Python?
+External packages in Python are installed using the pip package manager. The basic command is pip install package_name. For example, to install BeautifulSoup, you’d run pip install beautifulsoup4. You can also install packages from a requirements file using pip install -r requirements.txt, which is useful in projects shared across environments. It's recommended to use virtual environments (like venv) to manage project-specific dependencies. Installing packages allows Python developers to leverage existing libraries instead of building functionality from scratch, thus saving time and effort. Some platforms also use conda for package management in data science workflows.
+
+3. What is a User-Agent in HTTP?
+A User-Agent is a string sent in the headers of an HTTP request that identifies the client software making the request. It typically includes information about the browser, operating system, and device. For example, when a web browser accesses a website, it sends its User-Agent to help the server tailor responses. In web scraping, User-Agents are important because some websites block bots or scripts without a valid or realistic User-Agent. By setting a proper User-Agent in Python’s requests library, you can mimic real browser requests and avoid getting blocked. This adds a layer of legitimacy to scraping requests.
+
+4. What is soup.find_all() used for?
+In BeautifulSoup, soup.find_all() is used to search for and return all occurrences of a specific HTML tag within the parsed page. It returns a list of elements that match the search criteria, such as tag name, class, id, or other attributes. For example, soup.find_all('a') returns all anchor (<a>) tags in the HTML. It is especially useful in web scraping to extract structured data like all news headlines, links, or images. You can also pass filters using attrs to make more refined searches. It’s a core function in BeautifulSoup for navigating and parsing HTML content.
+
+5. What are the risks of web scraping?
+Web scraping can be extremely useful but comes with several legal, ethical, and technical risks. Some websites explicitly forbid scraping in their terms of service, and violating them could lead to IP bans or legal action. Technically, scraping can overload servers if done aggressively. Ethically, scraping sensitive or copyrighted content without permission is problematic. Sites may also use JavaScript to load content dynamically, which can break scrapers that rely only on static HTML. Additionally, changes in the site structure can easily break scraping scripts, making them unreliable for long-term use. It's important to always respect robots.txt and use scraping responsibly.
+
+6. What’s the difference between id and class in HTML?
+Both id and class are HTML attributes used to identify and style elements, but they serve different purposes. An id is unique and should only be used once per page for a single element. It’s often used for JavaScript targeting or internal linking (<div id="header">). A class, on the other hand, is reusable and can be assigned to multiple elements (<div class="menu">). Classes are primarily used for CSS styling or grouping similar elements. In web scraping, id is useful for pinpointing unique elements, while class helps extract multiple elements of the same type, like a list of articles.
+
+7. What is an HTML tag?
+An HTML tag is the basic building block of HTML (HyperText Markup Language), which is used to structure and present content on the web. Tags are enclosed in angle brackets, like <p> for paragraphs, <h1> for headings, and <a> for hyperlinks. Most tags come in pairs — an opening tag like <div> and a closing tag like </div>. Some tags, like <img>, are self-closing. Tags define the layout and formatting of content in a web page. For web scraping, HTML tags help determine the structure of the page so data like headlines, links, or prices can be extracted accurately.
+
+8. What does .text return in BeautifulSoup?
+In BeautifulSoup, the .text property is used to extract all the textual content from an HTML element, excluding the HTML tags. For example, if a tag is <p>Hello <b>World</b></p>, then using .text would return Hello World. This is useful when you're interested only in the readable content and not the HTML structure. It strips away nested tags and returns a clean string. In web scraping, .text is commonly used after finding elements with find() or find_all() to get the actual data, such as article headlines, paragraph content, or product names.
+
+9. What is a try-except block?
+A try-except block in Python is used for error handling. It allows you to run code that might raise exceptions (errors) and handle those errors gracefully instead of crashing the program. Inside the try block, you write the risky code. If an error occurs, the flow jumps to the except block where you define how to handle it. For example, when making a web request, a ConnectionError might occur. Instead of breaking the script, you can catch it and print a user-friendly message. It's essential in production-level code to make your programs robust and reliable.
+
+10. What are HTTP status codes?
+HTTP status codes are standardized codes returned by a web server in response to a request. They indicate whether the request was successful or if an error occurred. They are grouped into five categories:
+1xx (Informational)
+2xx (Success, e.g., 200 OK)
+3xx (Redirection, e.g., 301 Moved Permanently)
+4xx (Client Error, e.g., 404 Not Found)
+5xx (Server Error, e.g., 500 Internal Server Error)
+Understanding status codes is essential in web scraping to debug requests, handle errors, and take action based on the response (like retrying or logging failures).
+
